@@ -1,7 +1,8 @@
 {
   "include": ["src/**/*"],
   "compilerOptions": {
-    "lib": ["dom", "ESNext", "scripthost"],
+    "lib": ["ES2022", "dom", "scripthost"],
+    "types": ["node"],
     "strict": true,
     "outDir": "dist",
     "target": "ESNext",
