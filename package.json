@@ -60,7 +60,7 @@
     "lint:eslint": "eslint -f visualstudio .",
     "lint:prettier": "prettier '**/*{.ts,.js,.json,.md,.yml,rc}'",
     "mocha": "NODE_ENV=test mocha 'src/**/__tests__/*.test.ts'",
-    "prepare": "husky install",
+    "prepare": "husky install && npm run build",
     "prepublishOnly": "npm run build",
     "release": "semantic-release",
     "report": "open ./coverage/lcov-report/index.html",
