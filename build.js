@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import glob from "fast-glob";
-import { build, BuildOptions } from "esbuild";
+import { build } from "esbuild";
 
 (async () => {
   const entryPoints = [];
@@ -9,7 +9,7 @@ import { build, BuildOptions } from "esbuild";
   const outdir = path.resolve("dist");
   const files = glob.stream(["**", "!*.d.ts", "!**/__tests__"], {
     cwd: srcdir,
-  }) as AsyncIterable<string>;
+  });
 
   for await (const file of files) {
     if (path.extname(file) === ".ts") {
@@ -21,7 +21,7 @@ import { build, BuildOptions } from "esbuild";
     }
   }
 
-  const opts: BuildOptions = {
+  const opts = {
     outdir,
     entryPoints,
     outbase: srcdir,
