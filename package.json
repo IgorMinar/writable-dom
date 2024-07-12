@@ -31,6 +31,7 @@
     "semantic-release": "^18.0.0",
     "typescript": "^5.5.2"
   },
+  "type": "module",
   "files": [
     "dist",
     "!**/__tests__",
@@ -52,7 +53,7 @@
     "url": "https://github.com/marko-js/writable-dom"
   },
   "scripts": {
-    "build": "tsc -b && node -r esbuild-register build",
+    "build": "tsc -b && node build",
     "ci:report": "codecov",
     "ci:test": "nyc npm run mocha -- --forbid-pending --forbid-only",
     "format": "npm run lint:eslint -- --fix && npm run lint:prettier -- --write && (fixpack || true)",
